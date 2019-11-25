@@ -1,5 +1,17 @@
 <div>
   <% @students.each do |student| %>
-    <div><%= student.first_name + " " + student.last_name %></div>
+    <%=link_to student.to_s, student_path(student.id) %>
+    <br>
+    <!--
+    <p> Active Status</p>
+    <%= radio_button_tag(:status_false, "status")%>
+    <%=label_tag(:status_false, "false")%>
+    <br>
+    <p> This student is currently inactive.</p>
+    <%=radio_button_tag(:status_active, "active")%>
+    <%=label_tag(:status_active, "active")%>
+    <p> This student is currently active. </p> 
+    <%= submit_tag("Submit") %>
+    <br> -->
   <% end %>
 </div>
