@@ -18,9 +18,6 @@ class StudentsController < ApplicationController
     else
       @student.update(active: true)
     end
-    
-    Student.update_all active: true
-    
 
     redirect_to student_path(@student)
   end
