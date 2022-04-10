@@ -5,8 +5,25 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  def activate
+    @students = Student.all
+  end
+
   def show
   end
+
+  
+
+  def active
+    id = params[:id]
+    @student = Student.find(id)
+    @student.active = !@student.active
+    @student.save
+    redirect_to student_url
+    
+  end
+
+  
 
   private
 
